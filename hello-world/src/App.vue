@@ -32,11 +32,8 @@ export default {
     CreateTodo,
   },
   methods: {
-    addTodo(title) {
-      this.todos.push({
-        title,
-        done: false,
-      });
+    addTodo(todo) {
+      this.todos.push(todo);
     },
   },
   // data function avails data to the template

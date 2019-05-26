@@ -12,7 +12,7 @@
           </div>
           <div class='field'>
             <label>Project</label>
-            <input type='text' ref='project' defaultValue="">
+            <input  v-model="projectText"  type='text' ref='project' defaultValue="">
           </div>
           <div class='ui two button attached buttons'>
             <button class='ui basic blue button' v-on:click="sendForm()">
@@ -48,7 +48,7 @@ export default {
       if (this.titleText.length > 0 && this.projectText.length > 0) {
         const title = this.titleText;
         const project = this.projectText;
-        this.$emit('create-todo', {
+        this.$emit('add-todo', {
           title,
           project,
           done: false,
