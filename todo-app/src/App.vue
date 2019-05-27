@@ -24,6 +24,7 @@
 <script>
 import TodoList from './components/TodoList';
 import CreateTodo from './components/CreateTodo';
+import {mapGetters, mapActions} from 'vuex'
 
 export default {
   name: 'app',
@@ -36,27 +37,10 @@ export default {
       this.todos.push(todo);
     },
   },
-  // data function avails data to the template
-  data() {
-    return {
-      todos: [{
-        title: 'Todo A',
-        project: 'Project A',
-        done: false,
-      }, {
-        title: 'Todo B',
-        project: 'Project B',
-        done: true,
-      }, {
-        title: 'Todo C',
-        project: 'Project C',
-        done: false,
-      }, {
-        title: 'Todo D',
-        project: 'Project D',
-        done: false,
-      }],
-    };
+  computed: {
+    ...mapGetters({
+        todos: 'getTodos'
+    }),
   },
 };
 </script>
