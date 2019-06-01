@@ -22,25 +22,25 @@
 }
 </style>
 <script>
-import TodoList from "./components/TodoList";
-import CreateTodo from "./components/CreateTodo";
-import { mapGetters } from "vuex";
+import TodoList from './components/TodoList'
+import CreateTodo from './components/CreateTodo'
+import { mapGetters } from 'vuex'
 
 export default {
-  name: "app",
+  name: 'app',
   components: {
     TodoList,
-    CreateTodo,
+    CreateTodo
   },
   methods: {
     addTodo (todo) {
-      this.todos.push(todo);
+      this.todos.push(todo)
     }
   },
   computed: {
     ...mapGetters({
-      todos: "getTodos"
-    }),
-  },
-},
+      todos: 'getTodos'
+    })
+  }
+}
 </script>
