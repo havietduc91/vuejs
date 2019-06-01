@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
-      <router-link to="/to-do-list">To Do List</router-link>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> |
+      <router-link to="/to-do-list">To Do List</router-link> |
       <router-link to="/hello-world">Hello world</router-link>
     </div>
     <todo-list v-bind:todos="todos"></todo-list>

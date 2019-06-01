@@ -4,9 +4,8 @@ import router from './router'
 import store from './store'
 
 Vue.config.productionTip = false
-var vueApp = new Vue()
 
-vueApp({
+new Vue({
   el: '#app',
   render: h => h(App),
   router,
