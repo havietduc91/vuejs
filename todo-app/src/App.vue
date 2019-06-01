@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> 
-      <router-link to="/to-do-list">To Do List</router-link> 
+      <router-link to="/">Home</router-link>
+      <router-link to="/about">About</router-link>
+      <router-link to="/to-do-list">To Do List</router-link>
       <router-link to="/hello-world">Hello world</router-link>
     </div>
     <todo-list v-bind:todos="todos"></todo-list>
@@ -22,25 +22,25 @@
 }
 </style>
 <script>
-import TodoList from './components/TodoList';
-import CreateTodo from './components/CreateTodo';
-import {mapGetters, mapActions} from 'vuex'
+import TodoList from './components/TodoList'
+import CreateTodo from './components/CreateTodo'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'app',
   components: {
     TodoList,
-    CreateTodo,
+    CreateTodo
   },
   methods: {
-    addTodo(todo) {
-      this.todos.push(todo);
-    },
+    addTodo (todo) {
+      this.todos.push(todo)
+    }
   },
   computed: {
     ...mapGetters({
-        todos: 'getTodos'
-    }),
-  },
-};
+      todos: 'getTodos'
+    })
+  }
+}
 </script>
