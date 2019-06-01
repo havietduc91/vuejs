@@ -30,7 +30,7 @@ export default {
   name: "app",
   components: {
     TodoList,
-    CreateTodo
+    CreateTodo,
   },
   methods: {
     addTodo (todo) {
@@ -40,7 +40,7 @@ export default {
   computed: {
     ...mapGetters({
       todos: "getTodos"
-    })
+    }),
   },
-}
+},
 </script>

@@ -3,11 +3,12 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+var vueApp = new Vue();
 
-new Vue({
+vueApp({
   el: "#app",
-  render: (h)=> h(App),
+  render: (h) => h(App),
   router,
-  store
-})
+  store,
+});
