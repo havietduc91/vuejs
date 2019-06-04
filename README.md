@@ -7,4 +7,4 @@ Example to practice vuejs with amcharts, vue-boostrap, ag-grid, vuex, directives
 - npm run serve 
 - go to http://localhost:8080/
 
-![Sample App](blob:https://imgur.com/6831a20e-f19a-4d6e-b2b8-840ef254d85e)
+![Sample App](https://i.imgur.com/Z4sa4aO.png)
