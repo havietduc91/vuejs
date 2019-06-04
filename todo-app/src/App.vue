@@ -8,6 +8,7 @@
     <x-y-chart></x-y-chart>
     <alert show>Default Alert</alert>
     <sample-form/>
+    <sample-table style="margin-top: 20px;"/>
     <app-navigation v-sticky:bottom></app-navigation>
   </div>
 </template>
@@ -37,6 +38,7 @@ import XYChart from './components/charts/XYChart'
 //Code for vue boostrap
 import Alert from './components/boostrap-samples/Alert'
 import SampleForm from './components/SampleForm'
+import SampleTable from './components/boostrap-samples/Table'
 
 export default {
   name: 'app',
@@ -48,6 +50,7 @@ export default {
     XYChart,
     Alert,
     SampleForm,
+    SampleTable,
   },
   methods: {
     addTodo (todo) {
