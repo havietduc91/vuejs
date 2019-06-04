@@ -12,6 +12,7 @@
     <pie-chart></pie-chart>
     <x-y-chart></x-y-chart>
     <alert show>Default Alert</alert>
+    <sample-form/>
   </div>
 </template>
 
@@ -36,6 +37,7 @@ import XYChart from './components/charts/XYChart'
 
 //Code for vue boostrap
 import Alert from './components/boostrap-samples/Alert'
+import SampleForm from './components/SampleForm'
 
 export default {
   name: 'app',
@@ -45,6 +47,7 @@ export default {
     PieChart,
     XYChart,
     Alert,
+    SampleForm,
   },
   methods: {
     addTodo (todo) {
