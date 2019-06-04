@@ -1,11 +1,13 @@
 <template>
   <div>
+    Here is {{dataItem}}
     <b-table striped hover small :items="items" :fields="fields"></b-table>
   </div>
 </template>
 
 <script>
   export default {
+    props: ['dataItem'],
     data() {
       return {
         // Note 'age' is left out and will not appear in the rendered table

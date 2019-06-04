@@ -7,7 +7,7 @@
       </template>
 
       <template slot="inner_table" slot-scope="data">
-        <inner-table />
+        <inner-table v-bind:dataItem="data.item" />
       </template>
 
       <!-- A custom formatted column -->
