@@ -7,9 +7,9 @@
     <pie-chart></pie-chart>
     <x-y-chart></x-y-chart>
     <alert show>Default Alert</alert>
-    <sample-form/>
+    <form-sample/>
     <grid-sample/>
-    <sample-table style="margin-top: 20px;"/>
+    <table-sample style="margin-top: 20px;"/>
     <app-navigation v-sticky:bottom></app-navigation>
   </div>
 </template>
@@ -39,8 +39,8 @@ import XYChart from './components/charts/XYChart'
 
 //Vue boostrap samples
 import Alert from './components/boostrap-samples/Alert'
-import SampleForm from './components/SampleForm'
-import SampleTable from './components/boostrap-samples/Table'
+import FormSample from './components/FormSample'
+import TableSample from './components/boostrap-samples/Table'
 
 //Ag grid samples
 import GridSample from './components/grid/GridSample'
@@ -54,8 +54,8 @@ export default {
     PieChart,
     XYChart,
     Alert,
-    SampleForm,
-    SampleTable,
+    FormSample,
+    TableSample,
     GridSample,
   },
   methods: {
