@@ -11,6 +11,7 @@
     <div class="hello" ref="chartdiv"></div>
     <pie-chart></pie-chart>
     <x-y-chart></x-y-chart>
+    <alert show>Default Alert</alert>
   </div>
 </template>
 
@@ -33,6 +34,9 @@ import { mapGetters } from 'vuex'
 import PieChart from './components/charts/PieChart'
 import XYChart from './components/charts/XYChart'
 
+//Code for vue boostrap
+import Alert from './components/boostrap-samples/Alert'
+
 export default {
   name: 'app',
   components: {
@@ -40,6 +44,7 @@ export default {
     CreateTodo,
     PieChart,
     XYChart,
+    Alert,
   },
   methods: {
     addTodo (todo) {

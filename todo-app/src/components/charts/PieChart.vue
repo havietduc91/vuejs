@@ -1,5 +1,5 @@
 <template>
-  <div ref="pie_chart"></div>
+  <div ref="pie_chart" style="width: 100%; height: 400px;"></div>
 </template>
 
 <script>
