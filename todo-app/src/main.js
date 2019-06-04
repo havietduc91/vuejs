@@ -4,10 +4,15 @@ import router from './router'
 import store from './store'
 
 Vue.config.productionTip = false
+
+//Vue use bootstrap
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+Vue.use(BootstrapVue)
 
+
+//Vue use directives
 // Demo #1
 Vue.directive("sticky", function(el, binding, vnode) {
     el.style.position = "fixed";
@@ -26,8 +31,6 @@ Vue.directive("sticky", function(el, binding, vnode) {
         el.style.background = "#7e7e7e";
     }
 });
-
-Vue.use(BootstrapVue)
 
 new Vue({
   el: '#app',
