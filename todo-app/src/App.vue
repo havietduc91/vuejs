@@ -1,11 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/to-do-list">To Do List</router-link> |
-      <router-link to="/hello-world">Hello world</router-link>
-    </div>
+    <app-navigation v-sticky></app-navigation>
     <todo-list v-bind:todos="todos"></todo-list>
     <create-todo v-on:add-todo="addTodo"></create-todo>
     <div class="hello" ref="chartdiv"></div>
@@ -13,6 +8,7 @@
     <x-y-chart></x-y-chart>
     <alert show>Default Alert</alert>
     <sample-form/>
+    <app-navigation v-sticky:bottom></app-navigation>
   </div>
 </template>
 
@@ -27,6 +23,9 @@
 }
 </style>
 <script>
+//Commpn component
+import AppNavigation from './components/common/AppNavigation'
+
 import TodoList from './components/TodoList'
 import CreateTodo from './components/CreateTodo'
 import { mapGetters } from 'vuex'
@@ -42,6 +41,7 @@ import SampleForm from './components/SampleForm'
 export default {
   name: 'app',
   components: {
+    AppNavigation,
     TodoList,
     CreateTodo,
     PieChart,
@@ -61,3 +61,25 @@ export default {
   },
 }
 </script>
+<style>
+  body {
+    margin: 0;
+  }
+  #app {
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+  }
+  #nav a {
+    font-weight: bold;
+    color: #2c3e50;
+    line-height: 60px;
+  }
+
+  #nav a.router-link-exact-active {
+    color: #42b983;
+  }
+</style>
