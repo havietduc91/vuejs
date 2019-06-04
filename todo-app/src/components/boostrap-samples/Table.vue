@@ -1,25 +1,31 @@
 <template>
-  <div>
-    <b-table small :fields="fields" :items="items">
-      <!-- A virtual column -->
-      <template slot="index" slot-scope="data">
-        {{ data.index + 1 }}
-      </template>
+  <div style="margin-top: 20px;">
+    <b-container>
+      <b-row>
+        <b-col>
+          <b-table small :fields="fields" :items="items">
+            <!-- A virtual column -->
+            <template slot="index" slot-scope="data">
+              {{ data.index + 1 }}
+            </template>
 
-      <template slot="inner_table" slot-scope="data">
-        <inner-table v-bind:dataItem="data.item" />
-      </template>
+            <template slot="inner_table" slot-scope="data">
+              <inner-table v-bind:dataItem="data.item" />
+            </template>
 
-      <!-- A custom formatted column -->
-      <template slot="name" slot-scope="data">
-        {{ data.value.first }} {{ data.value.last }}
-      </template>
+            <!-- A custom formatted column -->
+            <template slot="name" slot-scope="data">
+              {{ data.value.first }} {{ data.value.last }}
+            </template>
 
-      <!-- A virtual composite column -->
-      <template slot="nameage" slot-scope="data">
-        {{ data.item.name.first }} is {{ data.item.age }} years old
-      </template>
-    </b-table>
+            <!-- A virtual composite column -->
+            <template slot="nameage" slot-scope="data">
+              {{ data.item.name.first }} is {{ data.item.age }} years old
+            </template>
+          </b-table>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 

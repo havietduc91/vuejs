@@ -8,6 +8,7 @@
     <x-y-chart></x-y-chart>
     <alert show>Default Alert</alert>
     <sample-form/>
+    <grid-sample/>
     <sample-table style="margin-top: 20px;"/>
     <app-navigation v-sticky:bottom></app-navigation>
   </div>
@@ -27,18 +28,22 @@
 //Commpn component
 import AppNavigation from './components/common/AppNavigation'
 
+//Todo list samples
 import TodoList from './components/TodoList'
 import CreateTodo from './components/CreateTodo'
 import { mapGetters } from 'vuex'
 
-//Code for chart
+//Am charts samples
 import PieChart from './components/charts/PieChart'
 import XYChart from './components/charts/XYChart'
 
-//Code for vue boostrap
+//Vue boostrap samples
 import Alert from './components/boostrap-samples/Alert'
 import SampleForm from './components/SampleForm'
 import SampleTable from './components/boostrap-samples/Table'
+
+//Ag grid samples
+import GridSample from './components/grid/GridSample'
 
 export default {
   name: 'app',
@@ -51,6 +56,7 @@ export default {
     Alert,
     SampleForm,
     SampleTable,
+    GridSample,
   },
   methods: {
     addTodo (todo) {
@@ -85,4 +91,8 @@ export default {
   #nav a.router-link-exact-active {
     color: #42b983;
   }
+</style>
+<style lang="scss">
+  @import "../node_modules/ag-grid-community/dist/styles/ag-grid.css";
+  @import "../node_modules/ag-grid-community/dist/styles/ag-theme-balham.css";
 </style>
