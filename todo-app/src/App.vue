@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <app-navigation v-sticky></app-navigation>
+    <invoice-layout />
     <todo-list v-bind:todos="todos"></todo-list>
     <create-todo v-on:add-todo="addTodo"></create-todo>
     <div class="hello" ref="chartdiv"></div>
@@ -8,7 +9,6 @@
     <x-y-chart></x-y-chart>
     <alert show>Default Alert</alert>
     <form-sample/>
-    <grid-sample/>
     <table-sample style="margin-top: 20px;"/>
     <app-navigation v-sticky:bottom></app-navigation>
   </div>
@@ -42,8 +42,8 @@ import Alert from './components/boostrap-samples/Alert'
 import FormSample from './components/FormSample'
 import TableSample from './components/boostrap-samples/Table'
 
-//Ag grid samples
-import GridSample from './components/grid/GridSample'
+//Invoice application
+import InvoiceLayout from './components/invoice/InvoiceLayout'
 
 export default {
   name: 'app',
@@ -56,7 +56,7 @@ export default {
     Alert,
     FormSample,
     TableSample,
-    GridSample,
+    InvoiceLayout,
   },
   methods: {
     addTodo (todo) {
