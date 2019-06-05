@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-top: 20px;">
+  <div class="chart-list-table">
     <b-container>
       <b-row>
         <b-col>

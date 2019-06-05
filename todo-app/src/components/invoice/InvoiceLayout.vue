@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-top: 20px; margin-bottom: 20px;">
+  <div class="invoice-layout">
     <b-container>
       <b-row>
         <b-col cols="3"></b-col>
@@ -12,7 +12,7 @@
 </template>
 
 <script type = "text/javascript" >
-    import ChartList from './ChartList';
+    import ChartList from './chart-list/Layout';
     import BCol from "bootstrap-vue/esm/components/layout/col";
 
     export default {
@@ -22,3 +22,10 @@
         },
     };
 </script>
+<style>
+  .invoice-layout {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #F5F6FA
+  }
+</style>
