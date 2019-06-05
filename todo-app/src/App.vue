@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <app-navigation v-sticky></app-navigation>
+    <StackColumnChart></StackColumnChart>
     <todo-list v-bind:todos="todos"></todo-list>
     <create-todo v-on:add-todo="addTodo"></create-todo>
     <div class="hello" ref="chartdiv"></div>
@@ -36,6 +37,7 @@ import { mapGetters } from 'vuex'
 //Am charts samples
 import PieChart from './components/charts/PieChart'
 import XYChart from './components/charts/XYChart'
+import StackColumnChart from './components/charts/StackColumnChart'
 
 //Vue boostrap samples
 import Alert from './components/boostrap-samples/Alert'
@@ -57,6 +59,7 @@ export default {
     FormSample,
     TableSample,
     GridSample,
+    StackColumnChart
   },
   methods: {
     addTodo (todo) {
