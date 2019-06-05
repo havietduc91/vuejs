@@ -4,10 +4,11 @@
       <b-row>
         <b-col>
           <ag-grid-vue style="height: 400px;"
-                       class="ag-theme-balham"
-                       :columnDefs="columnDefs"
-                       rowSelection="multiple"
-                       :rowData="rowData">
+            class="ag-theme-balham"
+            :columnDefs="columnDefs"
+            rowSelection="multiple"
+            :pagination="true"
+            :rowData="rowData">
           </ag-grid-vue>
         </b-col>
       </b-row>
