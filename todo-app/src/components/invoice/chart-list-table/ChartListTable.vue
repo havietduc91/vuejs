@@ -37,52 +37,62 @@
                     headerName: "Athlete",
                     field: "athlete",
                     width: 150,
+                    sortable: true,
                     checkboxSelection: true
                 },
                 {
                     headerName: "Age",
                     field: "age",
-                    width: 90
+                    width: 90,
+                    sortable: true,
                 },
                 {
                     headerName: "Country",
                     field: "country",
-                    width: 120
+                    width: 120,
+                    sortable: true,
                 },
                 {
                     headerName: "Year",
                     field: "year",
-                    width: 90
+                    width: 90,
+                    sortable: true,
                 },
                 {
                     headerName: "Date",
                     field: "date",
-                    width: 110
+                    width: 110,
+                    sortable: true,
                 },
                 {
                     headerName: "Sport",
                     field: "sport",
-                    width: 110
+                    width: 110,
+                    sortable: true,
                 },
                 {
                     headerName: "Gold",
                     field: "gold",
-                    width: 100
+                    width: 100,
+                    sortable: true,
                 },
                 {
                     headerName: "Silver",
                     field: "silver",
-                    width: 100
+                    width: 100,
+                    sortable: true,
                 },
                 {
                     headerName: "Bronze",
                     field: "bronze",
-                    width: 100
+                    width: 100,
+                    sortable: true,
                 },
                 {
                     headerName: "Total",
                     field: "total",
-                    width: 100
+                    width: 100,
+                    sortable: true,
                 }
             ];
             fetch('https://raw.githubusercontent.com/ag-grid/ag-grid/master/packages/ag-grid-docs/src/olympicWinnersSmall.json')
