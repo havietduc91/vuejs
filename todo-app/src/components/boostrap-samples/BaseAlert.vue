@@ -34,7 +34,8 @@
 </template>
 <script>
 export default {
-  data() {
+  name: 'BaseAlert',
+  data () {
     return {
       dismissSecs: 10,
       dismissCountDown: 0,
@@ -42,11 +43,11 @@ export default {
     }
   },
   methods: {
-    countDownChanged(dismissCountDown) {
+    countDownChanged (dismissCountDown) {
       this.dismissCountDown = dismissCountDown
     },
-    showAlert() {
-     this.dismissCountDown = this.dismissSecs
+    showAlert () {
+      this.dismissCountDown = this.dismissSecs
     }
   }
 }

@@ -2,15 +2,15 @@
     <div id="chartDiv" style="width: 100%; height: 400px;"></div>
 </template>
 <script>
-  import * as am4core from "@amcharts/amcharts4/core";
-  import * as am4charts from "@amcharts/amcharts4/charts";
-  import am4themes_animated from "@amcharts/amcharts4/themes/animated";
-  am4core.useTheme(am4themes_animated);
+import * as am4core from '@amcharts/amcharts4/core'
+import * as am4charts from '@amcharts/amcharts4/charts'
+import am4themes_animated from '@amcharts/amcharts4/themes/animated'
+am4core.useTheme(am4themes_animated)
 
-  export default {
-    mounted() {
-      let chart = am4core.create("chartDiv", am4charts.XYChart);
-      chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+export default {
+    mounted () {
+      let chart = am4core.create("chartDiv", am4charts.XYChart)
+      chart.hiddenState.properties.opacity = 0
 
       chart.data = [
         {
@@ -75,46 +75,46 @@
         }
       ];
 
-      chart.colors.step = 2;
-      chart.padding(30, 30, 10, 30);
+      chart.colors.step = 2
+      chart.padding(30, 30, 10, 30)
 
       //  format number
-      chart.numberFormatter.numberFormat = "$#a";
+      chart.numberFormatter.numberFormat = "$#a"
 
       // create and custom legend
-      chart.legend = new am4charts.Legend();
-      chart.legend.useDefaultMarker = true;
-      chart.legend.itemContainers.template.togglable = false;
-      chart.legend.itemContainers.template.focusable = false;
-      let markerTemplate = chart.legend.markers.template;
-      let marker = chart.legend.markers.template.children.getIndex(0);
-      marker.cornerRadius(0,0,0,0);
+      chart.legend = new am4charts.Legend()
+      chart.legend.useDefaultMarker = true
+      chart.legend.itemContainers.template.togglable = false
+      chart.legend.itemContainers.template.focusable = false
+      let markerTemplate = chart.legend.markers.template
+      let marker = chart.legend.markers.template.children.getIndex(0)
+      marker.cornerRadius(0,0,0,0)
       marker.stroke = am4core.color("#0672FF")
-      markerTemplate.width = 25;
-      markerTemplate.height = 7;
+      markerTemplate.width = 25
+      markerTemplate.height = 7
 
       // create and custom categoryAxis
-      let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-      categoryAxis.dataFields.category = "category";
+      let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+      categoryAxis.dataFields.category = "category"
       // categoryAxis.renderer.grid.template.location = 0;
-      categoryAxis.renderer.grid.template.disabled = true;
-      categoryAxis.renderer.minGridDistance = chart.data.length;
+      categoryAxis.renderer.grid.template.disabled = true
+      categoryAxis.renderer.minGridDistance = chart.data.length
 
       // create and custom valueAxis
-      let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-      valueAxis.min = 0;
-      valueAxis.calculateTotals = true;
-      valueAxis.renderer.minGridDistance = 50;
+      let valueAxis = chart.yAxes.push(new am4charts.ValueAxis())
+      valueAxis.min = 0
+      valueAxis.calculateTotals = true
+      valueAxis.renderer.minGridDistance = 50
 
       // create and custom series1
-      let series1 = chart.series.push(new am4charts.ColumnSeries());
-      series1.columns.template.width = am4core.percent(50);
-      series1.tooltip.getFillFromObject = false;
-      series1.tooltip.background.fill = am4core.color("#fff");
-      series1.tooltip.label.fill = am4core.color("#000");
-      series1.columns.template.tooltipPosition = "pointer";
-      series1.stroke = am4core.color("#0672FF");
-      series1.fill = am4core.color("#0672FF");
+      let series1 = chart.series.push(new am4charts.ColumnSeries())
+      series1.columns.template.width = am4core.percent(50)
+      series1.tooltip.getFillFromObject = false
+      series1.tooltip.background.fill = am4core.color("#fff")
+      series1.tooltip.label.fill = am4core.color("#000")
+      series1.columns.template.tooltipPosition = "pointer"
+      series1.stroke = am4core.color("#0672FF")
+      series1.fill = am4core.color("#0672FF")
       series1.tooltip.background.cornerRadius = 0
       series1.columns.template.tooltipHTML =
         `
@@ -137,26 +137,26 @@
             </tr>
         </table>
         `;
-      series1.name = "Acc Cost";
-      series1.dataFields.categoryX = "category";
-      series1.dataFields.valueY = "value1";
-      series1.dataItems.template.locations.categoryX = 0.5;
-      series1.stacked = true;
+      series1.name = "Acc Cost"
+      series1.dataFields.categoryX = "category"
+      series1.dataFields.valueY = "value1"
+      series1.dataItems.template.locations.categoryX = 0.5
+      series1.stacked = true
 
       // create and custom bullet1
-      let bullet1 = series1.bullets.push(new am4charts.LabelBullet());
-      bullet1.interactionsEnabled = false;
+      let bullet1 = series1.bullets.push(new am4charts.LabelBullet())
+      bullet1.interactionsEnabled = false
 
       // create and custom series2
-      let series2 = chart.series.push(new am4charts.ColumnSeries());
-      series2.columns.template.width = am4core.percent(50);
-      series2.tooltip.getFillFromObject = false;
-      series2.tooltip.background.fill = am4core.color("#fff");
-      series2.tooltip.label.fill = am4core.color("#000");
-      series2.tooltip.background.cornerRadius = 0;
-      series2.columns.template.tooltipPosition = "pointer";
-      series2.stroke = am4core.color("#C5DEFF");
-      series2.fill = am4core.color("#C5DEFF");
+      let series2 = chart.series.push(new am4charts.ColumnSeries())
+      series2.columns.template.width = am4core.percent(50)
+      series2.tooltip.getFillFromObject = false
+      series2.tooltip.background.fill = am4core.color("#fff")
+      series2.tooltip.label.fill = am4core.color("#000")
+      series2.tooltip.background.cornerRadius = 0
+      series2.columns.template.tooltipPosition = "pointer"
+      series2.stroke = am4core.color("#C5DEFF")
+      series2.fill = am4core.color("#C5DEFF")
       series2.columns.template.tooltipHTML =
         `
         <div class="title-left">AWS Cost - {category}</div>
@@ -178,18 +178,17 @@
             </tr>
         </table>
         `;
-      series2.name = "Bee Cost";
-      series2.dataFields.categoryX = "category";
-      series2.dataFields.valueY = "value2";
-      series2.stacked = true;
+      series2.name = "Bee Cost"
+      series2.dataFields.categoryX = "category"
+      series2.dataFields.valueY = "value2"
+      series2.stacked = true
 
       // create and custom bullet2
-      let bullet2 = series2.bullets.push(new am4charts.LabelBullet());
-      bullet2.interactionsEnabled = false;
+      let bullet2 = series2.bullets.push(new am4charts.LabelBullet())
+      bullet2.interactionsEnabled = false
     },
-    beforeDestroy() {
-    }
-  }
+
+}
 </script>
 <style lang="scss">
     .div-legend-csc {

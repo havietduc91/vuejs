@@ -1,51 +1,44 @@
 <template>
   <div id="app">
-    <app-navigation v-sticky></app-navigation>
+    <AppNavigation v-sticky></AppNavigation>
     <StackColumnChart></StackColumnChart>
-    <todo-list v-bind:todos="todos"></todo-list>
-    <create-todo v-on:add-todo="addTodo"></create-todo>
+    <InvoiceWrapperLayout type="charge_list" />
+    <!--<InvoiceWrapperLayout type="invoice_detail" />-->
+    <TodoList v-bind:todos="todos" />
+    <CreateTodo v-on:add-todo="addTodo" />
     <div class="hello" ref="chartdiv"></div>
-    <pie-chart></pie-chart>
-    <x-y-chart></x-y-chart>
-    <alert show>Default Alert</alert>
-    <form-sample/>
-    <grid-sample/>
-    <table-sample style="margin-top: 20px;"/>
-    <app-navigation v-sticky:bottom></app-navigation>
+    <BasePieChart />
+    <BaseXYChart />
+    <BaseAlert show>Default Alert</BaseAlert>
+    <SampleForm/>
+    <SampleTable style="margin-top: 20px;"/>
+    <AppNavigation v-sticky:bottom />
   </div>
 </template>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
 <script>
-//Commpn component
+// Commpn component
 import AppNavigation from './components/common/AppNavigation'
 
-//Todo list samples
+// Todo list samples
 import TodoList from './components/TodoList'
 import CreateTodo from './components/CreateTodo'
 import { mapGetters } from 'vuex'
 
-//Am charts samples
-import PieChart from './components/charts/PieChart'
-import XYChart from './components/charts/XYChart'
+
+
+// Am charts samples
+import BasePieChart from './components/charts/BasePieChart'
+import BaseXYChart from './components/charts/BaseXYChart'
 import StackColumnChart from './components/charts/StackColumnChart'
 
-//Vue boostrap samples
-import Alert from './components/boostrap-samples/Alert'
-import FormSample from './components/FormSample'
-import TableSample from './components/boostrap-samples/Table'
 
-//Ag grid samples
-import GridSample from './components/grid/GridSample'
+// Vue boostrap samples
+import BaseAlert from './components/boostrap-samples/BaseAlert'
+import SampleForm from './components/SampleForm'
+import SampleTable from './components/boostrap-samples/BaseTable'
+
+// Invoice application
+import InvoiceWrapperLayout from './components/invoice/InvoiceWrapperLayout'
 
 export default {
   name: 'app',
@@ -53,13 +46,13 @@ export default {
     AppNavigation,
     TodoList,
     CreateTodo,
-    PieChart,
-    XYChart,
-    Alert,
-    FormSample,
-    TableSample,
-    GridSample,
-    StackColumnChart
+    StackColumnChart,
+    BasePieChart,
+    BaseXYChart,
+    BaseAlert,
+    SampleForm,
+    SampleTable,
+    InvoiceWrapperLayout
   },
   methods: {
     addTodo (todo) {
@@ -70,29 +63,25 @@ export default {
     ...mapGetters({
       todos: 'getTodos'
     })
-  },
+  }
 }
 </script>
 <style>
-  body {
-    margin: 0;
-  }
   #app {
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-bottom: 30px;
+    margin-top: 60px;
+  }
+  body {
+    margin: 0;
   }
   #nav a {
     font-weight: bold;
     color: #2c3e50;
     line-height: 60px;
-  }
-
-  #nav a.router-link-exact-active {
-    color: #42b983;
   }
 </style>
 <style lang="scss">

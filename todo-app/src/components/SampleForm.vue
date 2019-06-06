@@ -9,10 +9,11 @@
   </div>
 </template>
 <script>
-  import BBForm from './boostrap-samples/Form';
-  export default {
-    components: {
-        BBForm
-    }
+import BBForm from './boostrap-samples/BaseForm'
+export default {
+  name: 'SampleForm',
+  components: {
+    BBForm
   }
+}
 </script>
