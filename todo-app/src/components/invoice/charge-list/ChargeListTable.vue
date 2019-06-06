@@ -34,6 +34,11 @@ export default {
     BCol,
     AgGridVue
   },
+  methods: {
+    currencyFormatter (params) {
+      return (params && params.value < 25) ? 'Trẻ em' : 'Người lớn'
+    }
+  },
   beforeMount () {
     this.columnDefs = [
       {
@@ -48,7 +53,8 @@ export default {
         headerName: 'Age',
         field: 'age',
         width: 90,
-        sortable: true
+        sortable: true,
+        valueFormatter: this.currencyFormatter,
       },
       {
         headerName: 'Country',
