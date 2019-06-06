@@ -34,9 +34,9 @@ Vue.directive("sticky", function(el, binding, vnode) {
 
 //Use font-awesome for v
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserSecret, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faUserSecret, faSearch, faSortDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faUserSecret, faSearch)
+library.add(faUserSecret, faSearch, faSortDown)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 new Vue({
