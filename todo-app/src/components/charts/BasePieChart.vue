@@ -9,7 +9,7 @@ import am4themesAnimated from '@amcharts/amcharts4/themes/animated'
 am4core.useTheme(am4themesAnimated)
 
 export default {
-  name: 'PieChart',
+  name: 'BasePieChart',
   mounted () {
     // Create chart instance
     let chart = am4core.create(this.$refs.pie_chart, am4charts.PieChart)

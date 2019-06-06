@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <app-navigation v-sticky></app-navigation>
+    <AppNavigation v-sticky></AppNavigation>
     <InvoiceWrapperLayout type="charge_list" />
     <!--<InvoiceWrapperLayout type="invoice_detail" />-->
     <TodoList v-bind:todos="todos" />
     <CreateTodo v-on:add-todo="addTodo" />
     <div class="hello" ref="chartdiv"></div>
-    <PieChart />
-    <XYChart />
+    <BasePieChart />
+    <BaseXYChart />
     <BaseAlert show>Default Alert</BaseAlert>
     <SampleForm/>
     <SampleTable style="margin-top: 20px;"/>
@@ -24,8 +24,8 @@ import CreateTodo from './components/CreateTodo'
 import { mapGetters } from 'vuex'
 
 // Am charts samples
-import PieChart from './components/charts/PieChart'
-import XYChart from './components/charts/XYChart'
+import BasePieChart from './components/charts/BasePieChart'
+import BaseXYChart from './components/charts/BaseXYChart'
 
 // Vue boostrap samples
 import BaseAlert from './components/boostrap-samples/BaseAlert'
@@ -41,8 +41,8 @@ export default {
     AppNavigation,
     TodoList,
     CreateTodo,
-    PieChart,
-    XYChart,
+    BasePieChart,
+    BaseXYChart,
     BaseAlert,
     SampleForm,
     SampleTable,

@@ -18,7 +18,16 @@
 import TodoListItem from './TodoListItem'
 
 export default {
-  props: ['todos'],
+  name: 'TodoList',
+  props: {
+    todos: [
+      {
+        title: String,
+        project: String,
+        done: Boolean
+      }
+    ]
+  },
   components: {
     TodoListItem
   },

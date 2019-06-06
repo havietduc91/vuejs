@@ -28,7 +28,7 @@ import BCol from 'bootstrap-vue/esm/components/layout/col'
 // LicenseManager.setLicenseKey('[TRIAL]_5_August_2019_[v2]_MTU2NDk2MzIwMDAwMA==cf4a41f302a394c24b79f5eddf332451');
 
 export default {
-  name: 'InvoiceDetaulTable',
+  name: 'InvoiceDetailTable',
   components: {
     BCol,
     AgGridVue

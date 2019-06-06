@@ -46,7 +46,14 @@
 
 <script>
 export default {
-  props: ['todo'],
+  name: 'TodoListItem',
+  props: {
+    todo: {
+      title: String,
+      project: String,
+      done: Boolean
+    }
+  },
   data () {
     return {
       isEditing: false

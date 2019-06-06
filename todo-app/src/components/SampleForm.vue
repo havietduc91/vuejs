@@ -11,6 +11,7 @@
 <script>
 import BBForm from './boostrap-samples/BaseForm'
 export default {
+  name: 'SampleForm',
   components: {
     BBForm
   }

@@ -8,7 +8,7 @@ import am4themesAnimated from '@amcharts/amcharts4/themes/animated'
 am4core.useTheme(am4themesAnimated)
 
 export default {
-  name: 'XYChart',
+  name: 'BaseXYChart',
   mounted () {
     let chart = am4core.create(this.$refs.xy_chart, am4charts.XYChart)
 
