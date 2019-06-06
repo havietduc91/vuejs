@@ -77,13 +77,15 @@
 
       chart.colors.step = 2;
       chart.padding(30, 30, 10, 30);
-      chart.rotate = true
-      chart.numberFormatter.numberFormat = "#a";
 
-      // add & custom legend
+      //  format number
+      chart.numberFormatter.numberFormat = "$#a";
+
+      // create and custom legend
       chart.legend = new am4charts.Legend();
       chart.legend.useDefaultMarker = true;
       chart.legend.itemContainers.template.togglable = false;
+      chart.legend.itemContainers.template.focusable = false;
       let markerTemplate = chart.legend.markers.template;
       let marker = chart.legend.markers.template.children.getIndex(0);
       marker.cornerRadius(0,0,0,0);
@@ -91,24 +93,20 @@
       markerTemplate.width = 25;
       markerTemplate.height = 7;
 
-      // categoryAxis
+      // create and custom categoryAxis
       let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
       categoryAxis.dataFields.category = "category";
-      categoryAxis.renderer.grid.template.location = 0;
+      // categoryAxis.renderer.grid.template.location = 0;
       categoryAxis.renderer.grid.template.disabled = true;
       categoryAxis.renderer.minGridDistance = chart.data.length;
 
-      // valueAxis
+      // create and custom valueAxis
       let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-      // valueAxis.title.text = "Monthly Sales";
       valueAxis.min = 0;
-      // valueAxis.max = 30;
-      // valueAxis.strictMinMax = true;
       valueAxis.calculateTotals = true;
-      valueAxis.renderer.minGridDistance = 20;
-      // valueAxis.renderer.minWidth = 35;
+      valueAxis.renderer.minGridDistance = 50;
 
-      // series1
+      // create and custom series1
       let series1 = chart.series.push(new am4charts.ColumnSeries());
       series1.columns.template.width = am4core.percent(50);
       series1.tooltip.getFillFromObject = false;
@@ -118,8 +116,6 @@
       series1.stroke = am4core.color("#0672FF");
       series1.fill = am4core.color("#0672FF");
       series1.tooltip.background.cornerRadius = 0
-      // let hs = series1.columns.template.states.create("hover");
-      // hs.properties.fill = am4core.color("#367B25");
       series1.columns.template.tooltipHTML =
         `
         <div class="title-left">ACB Cost - {category}</div>
@@ -144,15 +140,14 @@
       series1.name = "Acc Cost";
       series1.dataFields.categoryX = "category";
       series1.dataFields.valueY = "value1";
-      // series1.dataFields.valueYShow = "totalPercent";
       series1.dataItems.template.locations.categoryX = 0.5;
       series1.stacked = true;
 
-      // bullet1
+      // create and custom bullet1
       let bullet1 = series1.bullets.push(new am4charts.LabelBullet());
       bullet1.interactionsEnabled = false;
 
-      // series2
+      // create and custom series2
       let series2 = chart.series.push(new am4charts.ColumnSeries());
       series2.columns.template.width = am4core.percent(50);
       series2.tooltip.getFillFromObject = false;
@@ -188,10 +183,9 @@
       series2.dataFields.valueY = "value2";
       series2.stacked = true;
 
-      // bullet2
+      // create and custom bullet2
       let bullet2 = series2.bullets.push(new am4charts.LabelBullet());
       bullet2.interactionsEnabled = false;
-
     },
     beforeDestroy() {
     }
