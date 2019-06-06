@@ -46,25 +46,32 @@
 
 <script>
 export default {
-  props: ['todo'],
-  data() {
+  name: 'TodoListItem',
+  props: {
+    todo: {
+      title: String,
+      project: String,
+      done: Boolean
+    }
+  },
+  data () {
     return {
-      isEditing: false,
-    };
+      isEditing: false
+    }
   },
   methods: {
-    showForm() {
-      this.isEditing = true;
+    showForm () {
+      this.isEditing = true
     },
-    hideForm() {
-      this.isEditing = false;
+    hideForm () {
+      this.isEditing = false
     },
-    deleteTodo(todo) {
-      this.$emit('delete-todo', todo);
+    deleteTodo (todo) {
+      this.$emit('delete-todo', todo)
     },
-    completeTodo(todo) {
-      this.$emit('complete-todo', todo);
-    },
-  },
-};
+    completeTodo (todo) {
+      this.$emit('complete-todo', todo)
+    }
+  }
+}
 </script>

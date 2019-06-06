@@ -6,9 +6,9 @@
 </template>
 
 <script>
-  export default {
-    name: "AppNavigation"
-  };
+export default {
+  name: 'AppNavigation'
+}
 </script>
 <style lang="scss">
   #nav {

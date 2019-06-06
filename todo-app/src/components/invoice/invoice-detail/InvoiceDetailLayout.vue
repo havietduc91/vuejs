@@ -8,16 +8,17 @@
 </template>
 
 <script type = "text/javascript" >
-  import InvoiceTableHeader from '../common/InvoiceTableHeader';
-  import InvoiceDetailTable from './InvoiceDetailTable';
-  import InvoiceSearchFilter from '../common/InvoiceSearchFilter';
-  export default {
-    components: {
-      InvoiceTableHeader,
-      InvoiceSearchFilter,
-      InvoiceDetailTable,
-    }
-  };
+import InvoiceTableHeader from '../common/InvoiceTableHeader'
+import InvoiceDetailTable from './InvoiceDetailTable'
+import InvoiceSearchFilter from '../common/InvoiceSearchFilter'
+export default {
+  name: 'InvoiceDetailLayout',
+  components: {
+    InvoiceTableHeader,
+    InvoiceSearchFilter,
+    InvoiceDetailTable
+  }
+}
 </script>
 <style>
   .invoice-detail-wrapper {

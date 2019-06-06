@@ -30,33 +30,34 @@
 
 <script>
 export default {
-  data() {
+  name: 'CreateTodo',
+  data () {
     return {
       titleText: '',
       projectText: '',
-      isCreating: false,
-    };
+      isCreating: false
+    }
   },
   methods: {
-    openForm() {
-      this.isCreating = true;
+    openForm () {
+      this.isCreating = true
     },
-    closeForm() {
-      this.isCreating = false;
+    closeForm () {
+      this.isCreating = false
     },
-    sendForm() {
+    sendForm () {
       if (this.titleText.length > 0 && this.projectText.length > 0) {
-        const title = this.titleText;
-        const project = this.projectText;
+        const title = this.titleText
+        const project = this.projectText
         this.$emit('add-todo', {
           title,
           project,
-          done: false,
-        });
-        this.newTodoText = '';
+          done: false
+        })
+        this.newTodoText = ''
       }
-      this.isCreating = false;
-    },
-  },
-};
+      this.isCreating = false
+    }
+  }
+}
 </script>

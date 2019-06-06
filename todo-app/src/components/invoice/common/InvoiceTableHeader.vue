@@ -37,11 +37,12 @@
   </div>
 </template>
 <script>
-  export default {
-    props: {
-        activeTab: String,
-    },
+export default {
+  name: 'InvoiceTableHeader',
+  props: {
+    activeTab: String
   }
+}
 </script>
 <style lang="scss">
   .table-header-wrapper {
