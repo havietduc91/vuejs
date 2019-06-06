@@ -4,10 +4,14 @@
       <b-row>
         <b-col cols="10">
           <div class="tab-list-wrapper">
-            <div class="tab-item active">
+            <div
+                class="tab-item"
+                v-bind:class="{ active: activeTab === 'charge_list' }">
               Shop list
             </div>
-            <div class="tab-item">
+            <div
+                class="tab-item"
+                v-bind:class="{ active: activeTab === 'invoice_detail' }">
               Shop Detail
             </div>
           </div>
@@ -32,6 +36,13 @@
     </b-container>
   </div>
 </template>
+<script>
+  export default {
+    props: {
+        activeTab: String,
+    },
+  }
+</script>
 <style lang="scss">
   .table-header-wrapper {
     padding-top: 10px;
