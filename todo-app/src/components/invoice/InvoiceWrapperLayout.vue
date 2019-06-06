@@ -18,20 +18,21 @@
 </template>
 
 <script type = "text/javascript" >
-  import ChargeListLayout from './charge-list/ChargeListLayout';
-  import InvoiceDetailLayout from './invoice-detail/InvoiceDetailLayout';
-  import BCol from "bootstrap-vue/esm/components/layout/col";
+import ChargeListLayout from './charge-list/ChargeListLayout'
+import InvoiceDetailLayout from './invoice-detail/InvoiceDetailLayout'
+import BCol from 'bootstrap-vue/esm/components/layout/col'
 
-  export default {
-    props: {
-      type: String,
-    },
-    components: {
-      BCol,
-      ChargeListLayout,
-      InvoiceDetailLayout,
-    },
-  };
+export default {
+  name: 'InvoiceWrapperLayout',
+  props: {
+    type: String
+  },
+  components: {
+    BCol,
+    ChargeListLayout,
+    InvoiceDetailLayout
+  }
+}
 </script>
 <style>
   .invoice-wrapper-layout {

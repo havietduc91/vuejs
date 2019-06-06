@@ -8,16 +8,17 @@
 </template>
 
 <script type = "text/javascript" >
-  import ChargeListTable from './ChargeListTable';
-  import InvoiceTableHeader from '../common/InvoiceTableHeader';
-  import InvoiceSearchFilter from '../common/InvoiceSearchFilter';
-  export default {
-    components: {
-      InvoiceSearchFilter,
-      ChargeListTable,
-      InvoiceTableHeader,
-    }
-  };
+import ChargeListTable from './ChargeListTable'
+import InvoiceTableHeader from '../common/InvoiceTableHeader'
+import InvoiceSearchFilter from '../common/InvoiceSearchFilter'
+export default {
+  name: 'ChargeListLayout',
+  components: {
+    InvoiceSearchFilter,
+    ChargeListTable,
+    InvoiceTableHeader
+  }
+}
 </script>
 <style>
   .charge-list-wrapper {

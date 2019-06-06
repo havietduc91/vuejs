@@ -11,12 +11,13 @@
   </div>
 </template>
 <script>
-  import BCol from "bootstrap-vue/esm/components/layout/col";
-  export default {
-    components: {
-        BCol,
-    }
+import BCol from 'bootstrap-vue/esm/components/layout/col'
+export default {
+  name: 'InvoiceSearchFilter',
+  components: {
+    BCol
   }
+}
 </script>
 <style lang="scss">
   .search-filter-wrapper {
