@@ -4,7 +4,6 @@
       <b-row>
         <b-col cols="3"></b-col>
         <b-col cols="9">
-          {{type}}
           <div v-if="type === 'charge_list'" key="type">
             <ChargeListLayout />
           </div>
