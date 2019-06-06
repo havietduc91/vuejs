@@ -30,7 +30,7 @@
 </template>
 
 <script>
-  import InnerTable from './InnerTable';
+  import InnerTable from './BaseInnerTable';
   export default {
     components: {
       InnerTable

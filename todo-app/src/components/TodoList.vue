@@ -9,7 +9,7 @@
 
 <script type = "text/javascript" >
 
-import Todo from './Todo';
+import Todo from './TodoListItem';
 
 export default {
   props: ['todos'],
