@@ -20,13 +20,7 @@ import TodoListItem from './TodoListItem'
 export default {
   name: 'TodoList',
   props: {
-    todos: [
-      {
-        title: String,
-        project: String,
-        done: Boolean
-      }
-    ]
+    todos: Array
   },
   components: {
     TodoListItem
