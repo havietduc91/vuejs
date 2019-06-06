@@ -26,24 +26,24 @@
 }
 </style>
 <script>
-//Commpn component
+// Commpn component
 import AppNavigation from './components/common/AppNavigation'
 
-//Todo list samples
+// Todo list samples
 import TodoList from './components/TodoList'
 import CreateTodo from './components/CreateTodo'
 import { mapGetters } from 'vuex'
 
-//Am charts samples
+// Am charts samples
 import PieChart from './components/charts/PieChart'
 import XYChart from './components/charts/XYChart'
 
-//Vue boostrap samples
+// Vue boostrap samples
 import Alert from './components/boostrap-samples/Alert'
 import FormSample from './components/FormSample'
 import TableSample from './components/boostrap-samples/Table'
 
-//Invoice application
+// Invoice application
 import InvoiceWrapperLayout from './components/invoice/InvoiceWrapperLayout'
 
 export default {
@@ -57,7 +57,7 @@ export default {
     Alert,
     FormSample,
     TableSample,
-    InvoiceWrapperLayout,
+    InvoiceWrapperLayout
   },
   methods: {
     addTodo (todo) {
@@ -68,7 +68,7 @@ export default {
     ...mapGetters({
       todos: 'getTodos'
     })
-  },
+  }
 }
 </script>
 <style>
@@ -87,10 +87,6 @@ export default {
     font-weight: bold;
     color: #2c3e50;
     line-height: 60px;
-  }
-
-  #nav a.router-link-exact-active {
-    color: #42b983;
   }
 </style>
 <style lang="scss">
