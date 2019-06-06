@@ -13,9 +13,9 @@
 <script>
   import BCol from "bootstrap-vue/esm/components/layout/col";
   export default {
-      components: {
-          BCol,
-      }
+    components: {
+        BCol,
+    }
   }
 </script>
 <style lang="scss">

@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <app-navigation v-sticky></app-navigation>
-    <invoice-layout />
+    <InvoiceWrapperLayout type="chart_list" />
+    <InvoiceWrapperLayout type="invoice_detail" />
     <todo-list v-bind:todos="todos"></todo-list>
     <create-todo v-on:add-todo="addTodo"></create-todo>
     <div class="hello" ref="chartdiv"></div>
@@ -43,7 +44,7 @@ import FormSample from './components/FormSample'
 import TableSample from './components/boostrap-samples/Table'
 
 //Invoice application
-import InvoiceLayout from './components/invoice/InvoiceLayout'
+import InvoiceWrapperLayout from './components/invoice/InvoiceWrapperLayout'
 
 export default {
   name: 'app',
@@ -56,7 +57,7 @@ export default {
     Alert,
     FormSample,
     TableSample,
-    InvoiceLayout,
+    InvoiceWrapperLayout,
   },
   methods: {
     addTodo (todo) {
