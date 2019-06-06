@@ -97,7 +97,7 @@ export default {
     ]
     fetch('https://raw.githubusercontent.com/ag-grid/ag-grid/master/packages/ag-grid-docs/src/olympicWinnersSmall.json')
       .then((result) => result.json())
-      .then((rowData) => this.rowData = rowData)
+      .then((rowData) => (this.rowData = rowData))
   }
 }
 </script>
