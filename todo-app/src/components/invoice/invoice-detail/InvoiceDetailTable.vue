@@ -3,13 +3,18 @@
     <b-container>
       <b-row>
         <b-col>
-          <ag-grid-vue style="height: 400px;"
-            class="ag-theme-balham"
-            :columnDefs="columnDefs"
-            rowSelection="multiple"
-            :pagination="true"
-            :rowData="rowData">
-          </ag-grid-vue>
+          <div style="height: 100%; padding-top: 30px; box-sizing: border-box;">
+            <ag-grid-vue style="width: 100%; height: 100%;" class="ag-theme-balham" id="myGrid"
+                       :gridOptions="gridOptions"
+                       @grid-ready="onGridReady"
+                       :columnDefs="columnDefs"
+                       :rowData="rowData"
+                       :treeData="true"
+                       :animateRows="true"
+                       :groupDefaultExpanded="groupDefaultExpanded"
+                       :getDataPath="getDataPath"
+                       :autoGroupColumnDef="autoGroupColumnDef"></ag-grid-vue>
+          </div>
         </b-col>
       </b-row>
     </b-container>
@@ -19,85 +24,113 @@
     import { AgGridVue } from "ag-grid-vue";
     import BCol from "bootstrap-vue/esm/components/layout/col";
 
+    // import { LicenseManager } from "ag-grid-enterprise";
+    // LicenseManager.setLicenseKey("[TRIAL]_5_August_2019_[v2]_MTU2NDk2MzIwMDAwMA==cf4a41f302a394c24b79f5eddf332451");
+
+
     export default {
         name: 'App',
-        data() {
-            return {
-                columnDefs: null,
-                rowData: null
-            }
-        },
         components: {
             BCol,
             AgGridVue
         },
+        data: function() {
+            return {
+                gridOptions: null,
+                gridApi: null,
+                columnApi: null,
+                columnDefs: null,
+                rowData: null,
+                groupDefaultExpanded: null,
+                getDataPath: null,
+                autoGroupColumnDef: null
+            };
+        },
         beforeMount() {
-            this.columnDefs = [
+            this.gridOptions = {};
+            this.columnDefs = [{ field: "jobTitle" }, { field: "employmentType" }];
+            this.rowData = [
                 {
-                    headerName: "Athlete",
-                    field: "athlete",
-                    width: 150,
-                    sortable: true,
-                    checkboxSelection: true
+                    orgHierarchy: ["Erica Rogers"],
+                    jobTitle: "CEO",
+                    employmentType: "Permanent"
                 },
                 {
-                    headerName: "Age",
-                    field: "age",
-                    width: 90,
-                    sortable: true,
+                    orgHierarchy: ["Erica Rogers", "Malcolm Barrett"],
+                    jobTitle: "Exec. Vice President",
+                    employmentType: "Permanent"
                 },
                 {
-                    headerName: "Country",
-                    field: "country",
-                    width: 120,
-                    sortable: true,
+                    orgHierarchy: ["Erica Rogers", "Malcolm Barrett", "Esther Baker"],
+                    jobTitle: "Director of Operations",
+                    employmentType: "Permanent"
                 },
                 {
-                    headerName: "Year",
-                    field: "year",
-                    width: 90,
-                    sortable: true,
+                    orgHierarchy: ["Erica Rogers", "Malcolm Barrett", "Esther Baker", "Brittany Hanson"],
+                    jobTitle: "Fleet Coordinator",
+                    employmentType: "Permanent"
                 },
                 {
-                    headerName: "Date",
-                    field: "date",
-                    width: 110,
-                    sortable: true,
+                    orgHierarchy: ["Erica Rogers", "Malcolm Barrett", "Esther Baker", "Brittany Hanson", "Leah Flowers"],
+                    jobTitle: "Parts Technician",
+                    employmentType: "Contract"
                 },
                 {
-                    headerName: "Sport",
-                    field: "sport",
-                    width: 110,
-                    sortable: true,
+                    orgHierarchy: ["Erica Rogers", "Malcolm Barrett", "Esther Baker", "Brittany Hanson", "Tammy Sutton"],
+                    jobTitle: "Service Technician",
+                    employmentType: "Contract"
                 },
                 {
-                    headerName: "Gold",
-                    field: "gold",
-                    width: 100,
-                    sortable: true,
+                    orgHierarchy: ["Erica Rogers", "Malcolm Barrett", "Esther Baker", "Derek Paul"],
+                    jobTitle: "Inventory Control",
+                    employmentType: "Permanent"
                 },
                 {
-                    headerName: "Silver",
-                    field: "silver",
-                    width: 100,
-                    sortable: true,
+                    orgHierarchy: ["Erica Rogers", "Malcolm Barrett", "Francis Strickland"],
+                    jobTitle: "VP Sales",
+                    employmentType: "Permanent"
                 },
                 {
-                    headerName: "Bronze",
-                    field: "bronze",
-                    width: 100,
-                    sortable: true,
+                    orgHierarchy: ["Erica Rogers", "Malcolm Barrett", "Francis Strickland", "Morris Hanson"],
+                    jobTitle: "Sales Manager",
+                    employmentType: "Permanent"
                 },
                 {
-                    headerName: "Total",
-                    field: "total",
-                    width: 100,
-                    sortable: true,
+                    orgHierarchy: ["Erica Rogers", "Malcolm Barrett", "Francis Strickland", "Todd Tyler"],
+                    jobTitle: "Sales Executive",
+                    employmentType: "Contract"
+                },
+                {
+                    orgHierarchy: ["Erica Rogers", "Malcolm Barrett", "Francis Strickland", "Bennie Wise"],
+                    jobTitle: "Sales Executive",
+                    employmentType: "Contract"
+                },
+                {
+                    orgHierarchy: ["Erica Rogers", "Malcolm Barrett", "Francis Strickland", "Joel Cooper"],
+                    jobTitle: "Sales Executive",
+                    employmentType: "Permanent"
                 }
             ];
-            fetch('https://raw.githubusercontent.com/ag-grid/ag-grid/master/packages/ag-grid-docs/src/olympicWinnersSmall.json')
-                .then(result => result.json())
-                .then(rowData => this.rowData = rowData);
+            this.groupDefaultExpanded = -1;
+            this.getDataPath = data => {
+                return data.orgHierarchy;
+            };
+            this.autoGroupColumnDef = {
+                headerName: "Organisation Hierarchy",
+                cellRendererParams: { suppressCount: true }
+            };
+        },
+        mounted() {
+            this.gridApi = this.gridOptions.api;
+            this.gridColumnApi = this.gridOptions.columnApi;
+        },
+        methods: {
+            onFilterTextBoxChanged() {
+                this.gridApi.setQuickFilter(document.getElementById("filter-text-box").value);
+            },
+            onGridReady(params) {
+                params.api.sizeColumnsToFit();
+            }
         }
     }
 </script>

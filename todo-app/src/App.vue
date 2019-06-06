@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <app-navigation v-sticky></app-navigation>
-    <InvoiceWrapperLayout type="chart_list" />
-    <InvoiceWrapperLayout type="invoice_detail" />
+    <InvoiceWrapperLayout type="charge_list" />
+    <!--<InvoiceWrapperLayout type="invoice_detail" />-->
     <todo-list v-bind:todos="todos"></todo-list>
     <create-todo v-on:add-todo="addTodo"></create-todo>
     <div class="hello" ref="chartdiv"></div>

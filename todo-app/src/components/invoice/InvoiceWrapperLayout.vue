@@ -4,10 +4,11 @@
       <b-row>
         <b-col cols="3"></b-col>
         <b-col cols="9">
-          <div v-if="type === 'charge_list'">
+          {{type}}
+          <div v-if="type === 'charge_list'" key="type">
             <ChargeListLayout />
           </div>
-          <div v-else>
+          <div v-else-if="type === 'invoice_detail'" key="type">
             <InvoiceDetailLayout />
           </div>
         </b-col>
