@@ -3,28 +3,17 @@
     <app-navigation v-sticky></app-navigation>
     <InvoiceWrapperLayout type="charge_list" />
     <!--<InvoiceWrapperLayout type="invoice_detail" />-->
-    <todo-list v-bind:todos="todos"></todo-list>
-    <create-todo v-on:add-todo="addTodo"></create-todo>
+    <TodoList v-bind:todos="todos" />
+    <CreateTodo v-on:add-todo="addTodo" />
     <div class="hello" ref="chartdiv"></div>
-    <pie-chart></pie-chart>
-    <x-y-chart></x-y-chart>
-    <alert show>Default Alert</alert>
-    <form-sample/>
-    <table-sample style="margin-top: 20px;"/>
-    <app-navigation v-sticky:bottom></app-navigation>
+    <PieChart />
+    <XYChart />
+    <BaseAlert show>Default Alert</BaseAlert>
+    <SampleForm/>
+    <SampleTable style="margin-top: 20px;"/>
+    <AppNavigation v-sticky:bottom />
   </div>
 </template>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
 <script>
 // Commpn component
 import AppNavigation from './components/common/AppNavigation'
@@ -39,9 +28,9 @@ import PieChart from './components/charts/PieChart'
 import XYChart from './components/charts/XYChart'
 
 // Vue boostrap samples
-import Alert from './components/boostrap-samples/Alert'
-import FormSample from './components/FormSample'
-import TableSample from './components/boostrap-samples/Table'
+import BaseAlert from './components/boostrap-samples/BaseAlert'
+import SampleForm from './components/SampleForm'
+import SampleTable from './components/boostrap-samples/BaseTable'
 
 // Invoice application
 import InvoiceWrapperLayout from './components/invoice/InvoiceWrapperLayout'
@@ -54,9 +43,9 @@ export default {
     CreateTodo,
     PieChart,
     XYChart,
-    Alert,
-    FormSample,
-    TableSample,
+    BaseAlert,
+    SampleForm,
+    SampleTable,
     InvoiceWrapperLayout
   },
   methods: {
@@ -72,16 +61,16 @@ export default {
 }
 </script>
 <style>
-  body {
-    margin: 0;
-  }
   #app {
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-bottom: 30px;
+    margin-top: 60px;
+  }
+  body {
+    margin: 0;
   }
   #nav a {
     font-weight: bold;

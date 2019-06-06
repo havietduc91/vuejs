@@ -15,30 +15,30 @@
   </div>
 </template>
 <script>
-  import { AgGridVue } from "ag-grid-vue";
-  import BCol from "bootstrap-vue/esm/components/layout/col";
+import { AgGridVue } from "ag-grid-vue"
+import BCol from "bootstrap-vue/esm/components/layout/col"
 
-  export default {
-    name: 'App',
-    data() {
-      return {
-        columnDefs: null,
-        rowData: null
-      }
-    },
-    components: {
-      BCol,
-      AgGridVue
-    },
-    beforeMount() {
-      this.columnDefs = [
-        {headerName: 'Make', field: 'make', sortable: true, filter: true, checkboxSelection: true},
-        {headerName: 'Model', field: 'model', sortable: true, filter: true },
-        {headerName: 'Price', field: 'price', sortable: true, filter: true }
-      ];
-      fetch('https://api.myjson.com/bins/15psn9')
-          .then(result => result.json())
-          .then(rowData => this.rowData = rowData);
+export default {
+  name: 'BaseGrid',
+  data() {
+    return {
+      columnDefs: null,
+      rowData: null
     }
+  },
+  components: {
+    BCol,
+    AgGridVue
+  },
+  beforeMount() {
+    this.columnDefs = [
+      {headerName: 'Make', field: 'make', sortable: true, filter: true, checkboxSelection: true},
+      {headerName: 'Model', field: 'model', sortable: true, filter: true },
+      {headerName: 'Price', field: 'price', sortable: true, filter: true }
+    ];
+    fetch('https://api.myjson.com/bins/15psn9')
+        .then(result => result.json())
+        .then(rowData => this.rowData = rowData)
   }
+}
 </script>
