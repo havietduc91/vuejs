@@ -24,13 +24,10 @@ import TodoList from './components/TodoList'
 import CreateTodo from './components/CreateTodo'
 import { mapGetters } from 'vuex'
 
-
-
 // Am charts samples
 import BasePieChart from './components/charts/BasePieChart'
 import BaseXYChart from './components/charts/BaseXYChart'
 import StackColumnChart from './components/charts/StackColumnChart'
-
 
 // Vue boostrap samples
 import BaseAlert from './components/boostrap-samples/BaseAlert'

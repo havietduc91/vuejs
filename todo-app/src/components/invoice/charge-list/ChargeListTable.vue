@@ -8,6 +8,8 @@
             :columnDefs='columnDefs'
             rowSelection='multiple'
             :pagination='true'
+            :rowDragManaged="true"
+            :animateRows="true"
             :rowData='rowData'>
           </ag-grid-vue>
         </b-col>
@@ -37,6 +39,7 @@ export default {
         headerName: 'Athlete',
         field: 'athlete',
         width: 150,
+        cellClass: 'first-cell',
         checkboxSelection: true,
         sortable: true
       },
@@ -101,3 +104,9 @@ export default {
   }
 }
 </script>
+<style>
+  .first-cell {
+    background-color: red;
+    border-left: 5px solid #1772FF !important;
+  }
+</style>
