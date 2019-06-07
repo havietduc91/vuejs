@@ -8,6 +8,9 @@
             :columnDefs='columnDefs'
             rowSelection='multiple'
             :pagination='true'
+            :rowDragManaged='true'
+            :animateRows='true'
+            :rowClassRules='rowClassRules'
             :rowData='rowData'>
           </ag-grid-vue>
         </b-col>
@@ -37,6 +40,7 @@ export default {
         headerName: 'Athlete',
         field: 'athlete',
         width: 150,
+        cellClass: 'first-cell',
         checkboxSelection: true,
         sortable: true
       },
@@ -97,7 +101,25 @@ export default {
     ]
     fetch('https://raw.githubusercontent.com/ag-grid/ag-grid/master/packages/ag-grid-docs/src/olympicWinnersSmall.json')
       .then((result) => result.json())
-      .then((rowData) => this.rowData = rowData)
+      .then((rowData) => (this.rowData = rowData))
+    this.rowClassRules = {
+      'age-warning': params => {
+        const age = params.data.age
+        return age > 18 && age <= 25
+      },
+      'age-error': 'data.age < 18'
+    }
   }
 }
 </script>
+<style>
+  .first-cell {
+    border-left: 5px solid #1772FF !important;
+  }
+  .age-warning {
+    background-color: orangered !important;
+  }
+  .age-error {
+    background-color: indianred !important;
+  }
+</style>

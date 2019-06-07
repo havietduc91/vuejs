@@ -2,6 +2,7 @@
   <div id="app">
     <AppNavigation v-sticky></AppNavigation>
     <TotalPriceComponent/>
+    <StackColumnChart></StackColumnChart>
     <InvoiceWrapperLayout type="charge_list" />
     <!--<InvoiceWrapperLayout type="invoice_detail" />-->
     <TodoList v-bind:todos="todos" />
@@ -27,6 +28,7 @@ import { mapGetters } from 'vuex'
 // Am charts samples
 import BasePieChart from './components/charts/BasePieChart'
 import BaseXYChart from './components/charts/BaseXYChart'
+import StackColumnChart from './components/charts/StackColumnChart'
 
 // Vue boostrap samples
 import BaseAlert from './components/boostrap-samples/BaseAlert'
@@ -43,6 +45,7 @@ export default {
     AppNavigation,
     TodoList,
     CreateTodo,
+    StackColumnChart,
     BasePieChart,
     BaseXYChart,
     BaseAlert,
