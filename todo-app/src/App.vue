@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <AppNavigation v-sticky></AppNavigation>
+    <TotalPriceComponent/>
     <StackColumnChart></StackColumnChart>
     <InvoiceWrapperLayout type="charge_list" />
     <!--<InvoiceWrapperLayout type="invoice_detail" />-->
@@ -36,6 +37,7 @@ import SampleTable from './components/boostrap-samples/BaseTable'
 
 // Invoice application
 import InvoiceWrapperLayout from './components/invoice/InvoiceWrapperLayout'
+import TotalPriceComponent from './components/price/TotalPriceComponent'
 
 export default {
   name: 'app',
@@ -49,7 +51,8 @@ export default {
     BaseAlert,
     SampleForm,
     SampleTable,
-    InvoiceWrapperLayout
+    InvoiceWrapperLayout,
+    TotalPriceComponent
   },
   methods: {
     addTodo (todo) {
