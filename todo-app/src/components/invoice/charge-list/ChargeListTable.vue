@@ -34,6 +34,11 @@ export default {
     BCol,
     AgGridVue
   },
+  methods: {
+    ageFormatter (params) {
+      return (params && params.value < 18) ? 'Trẻ em' : 'Người lớn'
+    }
+  },
   beforeMount () {
     this.columnDefs = [
       {
@@ -48,7 +53,8 @@ export default {
         headerName: 'Age',
         field: 'age',
         width: 90,
-        sortable: true
+        sortable: true,
+        valueFormatter: this.ageFormatter
       },
       {
         headerName: 'Country',
@@ -105,9 +111,9 @@ export default {
     this.rowClassRules = {
       'age-warning': params => {
         const age = params.data.age
-        return age > 18 && age <= 25
+        return age > 16 && age <= 18
       },
-      'age-error': 'data.age < 18'
+      'age-danger': 'data.age < 16'
     }
   }
 }
@@ -119,7 +125,7 @@ export default {
   .age-warning {
     background-color: orangered !important;
   }
-  .age-error {
+  .age-danger {
     background-color: indianred !important;
   }
 </style>
