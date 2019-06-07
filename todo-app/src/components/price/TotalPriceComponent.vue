@@ -1,5 +1,5 @@
 <template>
-  <div class="invoice-wrapper-layout">
+  <div class="price-wrapper-layout">
     <b-container>
       <b-col>
         <b-row>
@@ -79,7 +79,7 @@ export default {
 </script>
 
 <style>
-.invoice-wrapper-layout {
+.price-wrapper-layout {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #f5f6fa;
