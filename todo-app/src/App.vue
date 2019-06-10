@@ -12,6 +12,7 @@
     <BasePieChart />
     <BaseXYChart />
     <BaseAlert show>Default Alert</BaseAlert>
+    <BaseCounter />
     <SampleForm/>
     <SampleTable style="margin-top: 20px;"/>
     <AppNavigation v-sticky:bottom />
@@ -41,6 +42,9 @@ import SampleTable from './components/boostrap-samples/BaseTable'
 import InvoiceWrapperLayout from './components/invoice/InvoiceWrapperLayout'
 import TotalPriceComponent from './components/price/TotalPriceComponent'
 
+// Base counter component
+import BaseCounter from './components/BaseCounter'
+
 export default {
   name: 'app',
   components: {
@@ -55,7 +59,8 @@ export default {
     SampleForm,
     SampleTable,
     InvoiceWrapperLayout,
-    TotalPriceComponent
+    TotalPriceComponent,
+    BaseCounter
   },
   methods: {
     addTodo (todo) {
