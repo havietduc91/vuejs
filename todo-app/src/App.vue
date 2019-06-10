@@ -3,6 +3,7 @@
     <AppNavigation v-sticky></AppNavigation>
     <TotalPriceComponent/>
     <StackColumnChart></StackColumnChart>
+    <BaseStackedBarChart></BaseStackedBarChart>
     <InvoiceWrapperLayout type="charge_list" />
     <!--<InvoiceWrapperLayout type="invoice_detail" />-->
     <TodoList v-bind:todos="todos" />
@@ -27,6 +28,7 @@ import { mapGetters } from 'vuex'
 
 // Am charts samples
 import BasePieChart from './components/charts/BasePieChart'
+import BaseStackedBarChart from './components/charts/BaseStackedBarChart'
 import BaseXYChart from './components/charts/BaseXYChart'
 import StackColumnChart from './components/charts/StackColumnChart'
 
@@ -47,6 +49,7 @@ export default {
     CreateTodo,
     StackColumnChart,
     BasePieChart,
+    BaseStackedBarChart,
     BaseXYChart,
     BaseAlert,
     SampleForm,
