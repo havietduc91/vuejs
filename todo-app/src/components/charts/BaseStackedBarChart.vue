@@ -14,7 +14,7 @@ export default {
   name: 'BaseStackedBarChart',
   mounted () {
     // Create chart instance
-    var chart = am4core.create('chartdiv', am4charts.XYChart)
+    const chart = am4core.create('chartdiv', am4charts.XYChart)
 
     chart.data = [{
       'category': 'One',
