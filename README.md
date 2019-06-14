@@ -12,4 +12,7 @@ Example to practice vuejs with amcharts, vue-boostrap, ag-grid, vuex, directives
 - npm run serve 
 - go to http://localhost:8080/
 
+### Feature notes: 
+- Apply firebase to push some notifications 
+
 ![Sample App](https://i.imgur.com/cpvS0CY.png)
