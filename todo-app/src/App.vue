@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <AppNavigation v-sticky></AppNavigation>
+    <a href="#" v-scroll-to="'#element'">Scroll to #element</a>
     <TotalPriceComponent/>
     <StackColumnChart></StackColumnChart>
     <BaseStackedBarChart></BaseStackedBarChart>
@@ -15,10 +16,17 @@
     <BaseCounter />
     <SampleForm/>
     <SampleTable style="margin-top: 20px;"/>
+
+    <div id="element">
+      Hi. I'm #element. {{ message }}
+    </div>
     <AppNavigation v-sticky:bottom />
   </div>
 </template>
 <script>
+import Vue from 'vue'
+import VueScrollTo from 'vue-scrollto'
+
 // Commpn component
 import AppNavigation from './components/common/AppNavigation'
 
@@ -44,6 +52,8 @@ import TotalPriceComponent from './components/price/TotalPriceComponent'
 
 // Base counter component
 import BaseCounter from './components/BaseCounter'
+
+Vue.use(VueScrollTo)
 
 export default {
   name: 'app',
@@ -71,6 +81,19 @@ export default {
     ...mapGetters({
       todos: 'getTodos'
     })
+  },
+  data: function () {
+    return {
+      message: 'Hello Vue.js!'
+    }
+  },
+  created () {
+  },
+  mounted () {
+    this.message = 'Hello I changed'
+  },
+  updated () {
+    VueScrollTo.scrollTo('#element', 10000, {})
   }
 }
 </script>

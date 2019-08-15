@@ -10,6 +10,7 @@ import store from './store'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret, faSearch, faSortDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import VueScrollTo from 'vue-scrollto'
 library.add(faUserSecret, faSearch, faSortDown)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
@@ -38,6 +39,22 @@ Vue.directive('sticky', function (el, binding, vnode) {
   }
 })
 
+// You can also pass in the default options
+Vue.use(VueScrollTo, {
+  container: 'body',
+  duration: 500,
+  easing: 'ease',
+  offset: 0,
+  force: true,
+  cancelable: true,
+  onStart: false,
+  onDone: false,
+  onCancel: false,
+  x: false,
+  y: true
+})
+
+// eslint-disable-next-line no-new
 new Vue({
   el: '#app',
   render: h => h(App),
